@@ -41,3 +41,20 @@ var penalty = service.ReturnEquipment(rental.Id);
 Console.WriteLine("Penalty: " + penalty);
 Console.WriteLine("report");
 Console.WriteLine(service.GetSummaryReport());
+Console.WriteLine("Available equipment:");
+foreach (var e in service.GetAvailableEquipment())
+{
+    Console.WriteLine(e.GetInfo());
+}
+Console.WriteLine("Marking projector as unavailable...");
+service.MarkEquipmentUnavailable(projector.Id);
+Console.WriteLine("Available equipment after change:");
+foreach (var e in service.GetAvailableEquipment())
+{
+    Console.WriteLine(e.GetInfo());
+}
+Console.WriteLine("Overdue rentals:");
+foreach (var r in service.GetOverdueRentals())
+{
+    Console.WriteLine(r.Equipment.Name + " rented by " + r.User.FullName);
+}
