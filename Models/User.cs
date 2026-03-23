@@ -6,6 +6,7 @@ public class User
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public UserType UserType { get; set; }
+    public string ShortInfo => FullName + " - " + UserType;
     public User(string firstName, string lastName, UserType userType)
     {
         Id = Guid.NewGuid();

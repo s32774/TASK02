@@ -7,7 +7,9 @@ var db = Singleton.Instance;
 var service = new RentalService();
 var user1 = new User("olena", "Chornobai", UserType.Student);
 var user2 = new User("Alex", "Ruban", UserType.Employee);
-
+Console.WriteLine("Users:");
+Console.WriteLine(user1.ShortInfo);
+Console.WriteLine(user2.ShortInfo);
 service.AddUser(user1);
 service.AddUser(user2);
 var laptop = new Laptop("Lenovo", "Office laptop", 16, "i7");
