@@ -7,19 +7,25 @@ var db = Singleton.Instance;
 var service = new RentalService();
 var user1 = new User("olena", "Chornobai", UserType.Student);
 var user2 = new User("Alex", "Ruban", UserType.Employee);
+var user3 = new User("Maria", "Lis", UserType.Student);
+
+service.AddUser(user1);
+service.AddUser(user2);
+service.AddUser(user3);
 Console.WriteLine("Users:");
 Console.WriteLine(user1.ShortInfo);
 Console.WriteLine(user2.ShortInfo);
-service.AddUser(user1);
-service.AddUser(user2);
+Console.WriteLine(user3.ShortInfo);
+
 var laptop = new Laptop("Lenovo", "Office laptop", 16, "i7");
 var camera = new Camera("Canon", "Photo camera", 24, true);
 var projector = new Projector("Epson", "HD projector", 3000, true);
+var laptop2 = new Laptop("Lenovo", "Student laptop", 8, "i5");
 
 service.AddEquipment(laptop);
 service.AddEquipment(camera);
 service.AddEquipment(projector);
-
+service.AddEquipment(laptop2);
 Console.WriteLine("All equipment:");
 foreach (var e in service.GetAllEquipment())
 {
