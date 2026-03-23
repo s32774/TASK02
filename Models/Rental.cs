@@ -22,7 +22,6 @@ public class Rental
     {
         return ReturnDate == null;
     }
-
     public bool IsOverdue()
     {
         return ReturnDate == null && DateTime.Now > DueDate;
