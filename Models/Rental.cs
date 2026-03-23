@@ -8,6 +8,7 @@ public class Rental
     public DateTime DueDate { get; set; }
     public DateTime? ReturnDate { get; set; }
     public decimal Penalty { get; set; }
+    public bool HasPenalty => Penalty > 0;
     public Rental(User user, Equipment equipment, int days)
     {
         Id = Guid.NewGuid();
